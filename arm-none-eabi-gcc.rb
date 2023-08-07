@@ -2,14 +2,14 @@ require 'formula'
 
 class ArmNoneEabiGcc < Formula
 
-  homepage 'https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads'
-  version '10.3-2021.07'
+  homepage 'https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads'
+  version '12.3-2023.07'
 
-  url 'https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.07/gcc-arm-none-eabi-10.3-2021.07-mac-10.14.6.tar.bz2'
-  sha256 '0a4554b248a1626496eeba56ad59d2bba4279cb485099f820bb887fe6a8b7ee4'
+  url 'https://developer.arm.com/-/media/Files/downloads/gnu/12.3.rel1/binrel/arm-gnu-toolchain-12.3.rel1-darwin-arm64-arm-none-eabi.tar.xz'
+  sha256 '91b46a984743ac2323376dd0273ad587d56c74253315ede6fcc1cc8056b2aa85'
 
   def install
-    (prefix/"gcc").install Dir["./*"]
-    Dir.glob(prefix/"gcc/bin/*") { |file| bin.install_symlink file }
+    (prefix/"arm-gnu-toolchain-12.3.rel1-darwin-arm64-arm-none-eabi").install Dir["./*"]
+    Dir.glob(prefix/"arm-gnu-toolchain-12.3.rel1-darwin-arm64-arm-none-eabi/bin/*") { |file| bin.install_symlink file }
   end
 end
